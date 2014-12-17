@@ -8,6 +8,10 @@ Direct drag & drop copying to the mbed drive is also resumed.
 Installation
 ------
 
-    sudo cp org.takuo.mbedremounter.plist /Library/LaunchDaemons
-    sudo launchctl load /Library/LaunchDaemons/org.takuo.mbedremounter.plist
+    sudo sh install.sh
+
+Uninstallation
+------
+
+    sudo sh uninstall.sh
 
