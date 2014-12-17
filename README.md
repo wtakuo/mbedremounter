@@ -25,12 +25,14 @@ Tested Platforms
 
 * NXP mbed LPC1768
 * NXP LPC00-MAX
-* Freescale FRDM-KL25
-* Freescale FRDM-KL46
+* Freescale FRDM-KL25Z
+* Freescale FRDM-KL46Z
 * Freescale FRDM-K46F
 * ST Nucleo F401RE
 * Nordic nRF51822
 * Switch Science mbed HRM1017
+* Switch Science mbed LPC824 (tested by @tedd_okano)
+* Switch Science mbed LPC1114FN28 (tested by @tedd_okano)
 
 
 
