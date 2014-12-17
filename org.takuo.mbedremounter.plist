@@ -6,8 +6,7 @@
     <key>ProgramArguments</key>
     <array>
       <string>/bin/sh</string>
-      <string>-c</string>
-      <string>m=/Volumes/MBED; if [ -d $m -a $(diskutil info $m | egrep -c "Read-Only Volume.*Yes") == 1 ]; then d=$(df | grep MBED | awk "{print \$1}"); umount $d; mkdir -p $m; mount -w -o sync -t msdos $d $m; fi</string>
+      <string>/usr/local/share/mbedremounter/mbedremounter.sh</string>
     </array>
     <key>StartOnMount</key>
     <true/>

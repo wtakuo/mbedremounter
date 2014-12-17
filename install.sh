@@ -1,17 +1,27 @@
 #!/bin/sh
-label=org.takuo.mbedremounter
-file=$label.plist
-dest=/Library/LaunchDaemons
+name=mbedremounter
+domain=org.takuo
+label=$domain.$name
+
+dfile=$label.plist
+ddest=/Library/LaunchDaemons
+sfile=$name.sh
+sdest=/usr/local/share/$name
 
 if [ $(launchctl list | grep -c $label) == 1 ]; then
-    if [ -f $dest/$file ]; then
-        launchctl unload $dest/$file
+    if [ -f $ddest/$dfile ]; then
+        launchctl unload $ddest/$dfile
     else
-        echo Plase unload $label manually
+        echo Plase stop and unload $label manually
+        exit 1
     fi
 fi
 
-cp $file $dest
-chmod go-w $dest/$file
-launchctl load -w $dest/$file
+if [ ! -d $sdest ]; then
+    mkdir -p $sdest
+fi
+cp $sfile $sdest
+cp $dfile $ddest
+chmod go-w $ddest/$dfile
+launchctl load -w $ddest/$dfile
 
