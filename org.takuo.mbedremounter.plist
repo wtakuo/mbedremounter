@@ -13,11 +13,11 @@
     <key>Label</key>
     <string>org.takuo.mbedremounter</string>
     <key>Program</key>
-    <string>/bin/bash</string>
+    <string>/usr/bin/python</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/bin/bash</string>
-      <string>/usr/local/share/mbedremounter/mbedremounter.sh</string>
+      <string>/usr/bin/python</string>
+      <string>/usr/local/share/mbedremounter/mbedremounter.py</string>
     </array>
     <key>StartOnMount</key>
     <true/>

@@ -13,7 +13,7 @@ label=$domain.$name
 
 dfile=$label.plist
 ddest=/Library/LaunchDaemons
-sfile=$name.sh
+sfile=$name.py
 sdest=/usr/local/share/$name
 
 if [ $(launchctl list | grep -c $label) == 1 ]; then

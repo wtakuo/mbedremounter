@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/python
 # MBED Remounter
 # Copyright (C) 2014, Takuo Watanabe
 # http://developer.mbed.org/users/takuo/notebook/another-workaround-for-yosemite/
@@ -7,19 +7,15 @@
 # This software is distributed under Apache-2.0 license
 # http://opensource.org/licenses/Apache-2.0
 
+import re, subprocess
+
 # The basic idea of the regular expression is by Ned Konz
 # http://developer.mbed.org/users/takuo/notebook/another-workaround-for-yosemite/?compage=1#c14828
 
-mount |
-while read l; do
-    if [[ $l =~ (/dev/[^\ ]+)\ on\ (/Volumes/(MBED|NUCLEO).*)\ \(msdos.*read-only.*\) ]]; then
-        d=${BASH_REMATCH[1]}
-        m=${BASH_REMATCH[2]}
-        umount $d
-        mkdir -p "$m"
-        mount -w -o sync -t msdos $d "$m"
-        # Uncomment the next line if you want to hear the notification voice
-        # say Your embed is ready
-    fi
-done
+p = re.compile(r'(/dev/\S+) on (\S*(MBED|NUCLEO).*) \(msdos.*read-only.*\)')
+for r in p.finditer(subprocess.check_output('mount')):
+    (d, m) = r.group(1,2)
+    subprocess.check_call(['umount', d])
+    subprocess.check_call(['mkdir', m])
+    subprocess.check_call(['mount', '-w', '-o', 'sync', '-t', 'msdos', d, m])
 
