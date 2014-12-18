@@ -1,9 +1,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
-    mbedremounter
+    MBED remounter
     Copyright (C) 2014, Takuo Watanabe
     http://developer.mbed.org/users/takuo/notebook/another-workaround-for-yosemite/
-    This program is still in testing phase. Use it at your own risk.
+    This software is still in testing phase. Use it at your own risk.
 
     This software is distributed under Apache-2.0 license
     http://opensource.org/licenses/Apache-2.0
@@ -18,7 +18,7 @@
     <true/>
     <key>ProgramArguments</key>
     <array>
-      <string>/bin/sh</string>
+      <string>/bin/bash</string>
       <string>/usr/local/share/mbedremounter/mbedremounter.sh</string>
     </array>
     <key>StartOnMount</key>

@@ -24,17 +24,19 @@ Tested Platforms
 ------
 
 * NXP mbed LPC1768
-* NXP LPC00-MAX
+* NXP LPC800-MAX
 * Freescale FRDM-KL25Z
 * Freescale FRDM-KL46Z
 * Freescale FRDM-K46F
 * ST Nucleo F401RE
 * Nordic nRF51822
 * Switch Science mbed HRM1017
-* Switch Science mbed LPC824 (tested by @tedd_okano)
-* Switch Science mbed LPC1114FN28 (tested by @tedd_okano)
+* Switch Science mbed LPC824 (reported by Okano-san)
+* Switch Science mbed LPC1114FN28 (reported by Okano-san)
 
+Acknowledgments
+------
 
-
-
+* [Akifumi Okano](https://developer.mbed.org/users/okano) for his droplet that inspired me as well as testing and advertising this software
+* [Ned Konz](https://developer.mbed.org/users/bikeNomad) for his nice regular expression that can retrieve required items only from the output of the mount command
 
