@@ -17,16 +17,14 @@ sfile=$name.sh
 sdest=/usr/local/share/$name
 
 if [ $(launchctl list | grep -c $label) == 1 ]; then
-    if [ -f $ddest/$dfile ]; then
-        launchctl unload $ddest/$dfile
-        rm -f $ddest/$dfile
-    else
-        echo Plase unload $label manually
-        exit 1
-    fi
+    launchctl remove $label
+fi
+launchctl disable system/$label
+
+if [ -f $ddest/$dfile ]; then
+    rm -f $ddest/$dfile
 fi
 
 if [ -d $sdest ]; then
     rm -rf $sdest
 fi
-
